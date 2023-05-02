@@ -20,30 +20,40 @@
 
             <a href="{% url 'home-index' %}" class="navbar-button">Home</a>
             <a href="{% url 'index' %}" class="navbar-button">Class selector</a>
-            <a href="#feedback" class="navbar-button">Contact</a>
-            <a href="#about" class="navbar-button">About</a>
+            <a href="#contactus" class="navbar-button">Contact</a>
+            <a href="#feedback" class="navbar-button">About</a>
     </nav>
     </header>
     <section class="content" id="content">
         {% block content %}{% endblock %}
+        <p class="information">Cайт позволяет организовать большой объем информации о расписании на одной платформе. 
+        Здесь можно разместить информацию о расписании всех уроков, что значительно облегчит процесс обучения детей.</p>
+        <p class="information">Благодаря этому сайту можно быстро и легко создавать расписание. 
+        Если происходят какие-либо изменения, то их можно оперативно внести в базу данных, чтобы все ученики были знали об актуальном расписании на любой день.</p>
+        <p class="information">Сайт может существенно помочь тем, кто по возможности использует этот сайт. 
+        Современный и практичный дизайн говорит о том, что разработчики заботится о своих потенциальных пользователях, обеспечивая им максимальное удобство.</p>
     </section>
-
-    <section class="feedback" id="feedback" name="feedback">
-        <div class='feedback'>
-            {% block feedback %}{% endblock %}
+    <section class="contact" id="contactus" name="contactus">
+        <div class="container1">
+            <div class="contact"><h1 class="contacts">Контакты разработчиков</h1>
+                <img src="{% static 'homepage/img/daniel.jpg' %}" height="100px" class="logo"></a>                
+                <img src="{% static 'homepage/img/Stephan.jpg' %}" height="100px" class="logo"></a>
+                <img src="{% static 'homepage/img/mASSim.jpg' %}" height="100px" class="logo"></a>
+            <figcaption><a href="https://zotkinsb.t.me" style="padding-right: 90px; position: static; padding-left: 8.5px;" class="figure-caption">Зоткин Д.</a>
+                        <a href="https://t.me/ignatpmk" style="padding-right:px; position:static;" class="figure-caption">Стеняев С.</a>
+                        <a href="https://t.me/Gasanofffgusein" style="padding-left: 90px; position: static;" class="figure-caption">Маркин М.</a>
+            </figcaption>
+            </div>
         </div>
     </section>
-    <section class="about" id="about" name="about">
-        <div class="about">
-            <a href="https://zotkinsb.t.me"><img src="{% static 'homepage/img/daniel.jpg' %}" height="40px" class="logo"></a>
-            <a href="https://t.me/ignatpmk"><img src="{% static 'homepage/img/stephan.jpeg' %}" height="40px" class="logo"></a>
-            <a href="https://t.me/Gasanofffgusein"><img src="{% static 'homepage/img/mASSim.jpg' %}" height="40px" class="logo"></a>
+    <section class="feedback" id="feedback">
+        <div class='feedback_inside_section'>
+            <div class="feedbackbox">
+                    <p><span>Feedback:</span><br>
+                    <button class="btn-inf"><a href="https://t.me/zsmsupport" class="btn-info">Telegram</a></button>
+            </div>
         </div>
-
     </section>
-    <footer>
-
-    </footer>
     <style> 
     /* for Safari */
         .timetable {
@@ -57,12 +67,6 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             text-align: left;
         }
-
-        .logo {
-            border-radius: 20px;
-            margin-right: 10px;
-        }
-
         body {
             background: rgb(243, 243, 243);
         }
@@ -156,9 +160,262 @@
         .class-buttons {
             width: 500px;
         }
-        .btn {
-            padding-left: 20px;
-            padding-right: 20px;
+        .timetable {
+            margin: 15px;
+            padding: 5px;
+            width: 220px;
+            min-width: 200px;
+            min-width: auto;
+            box-sizing: 260px;
+            display: inline-block;
+            border-radius: 10px;
+            line-height: 0.9em;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align:left;
+        }
+        .card {
+            border: none;
+        }
+        .logo {           
+            position:sticky;
+            border-radius: 20px;
+            align-items: center;
+            margin: 0rem 50px 1rem;
+        }
+        .contacts{
+            align-items: center;
+            color: #000;
+            padding: 0.5rem;
+            font-size: 40px;
+        }
+        p span {
+            color: rgba(0, 0, 0, 0.6);
+            justify-content: right;
+        }
+        body {
+            background: rgb(243, 243, 243);
+        }
+        .about{
+            background-color: #A5A5A5;
+            width: auto;
+            height: 12rem;
+        }
+        .aboutsite{
+            text-align: center;
+            color: #000;
+            padding: 0.4rem;
+            font-size: 40px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container1{
+            width: 1170px;
+            margin: 0 auto;
+            height: 0 auto;
+        }
+        .container2{
+            width: 1650px;
+            margin: 0 auto;
+            height: 0 auto;
+        }
+        .rows {
+            display: block;
+        }
+        .rows{
+            height: auto;
+            display: block;
+            text-align: center;
+            min-width:auto;
+            overflow-x: scroll;
+            white-space: nowrap;        
+        }
+        .rows::-webkit-scrollbar {
+            width: 15px;            
+        }
+        .rows::-webkit-scrollbar-track{
+            background: #d4d4d4;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 1) inset;
+        }
+        .rows::-webkit-scrollbar-thumb{
+            background: #808080;
+            border-radius: 5px;
+            border: 3px solid #d4d4d4;
+        }
+        .fixed-top {
+            background: rgb(243, 243, 243);
+            box-sizing: border-box;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+            display: flex;
+            height: max-content;
+            justify-content: left;
+            padding-left: 15px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .navbar-button {
+            padding: 28px 15px;
+            font-family: Inter, sans-serif;
+            font-size: 20px;
+            color: #212529;
+            transition: all 0.5s;
+        }
+
+        .navbar-button:hover {
+            color: rgb(49, 108, 244);
+            transition: all 0.5s;
+        }
+
+        .lesson {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .cabinet {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.6);
+        }
+        .feedback {
+            width: auto;
+            height: 30rem;
+        }
+
+        .contact{
+            text-align: center;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            padding-top: 200px;
+        }
+        
+        .date {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        }
+        h1.title span {
+        background: linear-gradient(90deg, #10BACD, #9D49F3, #FC6A8F, #F89311);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-decoration-color: transparent;
+        }
+
+        .class-name {
+            text-align: center;
+        }
+        .date {
+            text-align: center;
+        }
+
+
+
+        .content {
+            margin: 150px 50px 50px;
+            height: auto;
+        }
+        .class-buttons {
+            width: 500px;
+        }
+        .class-name{
+            display: block;
+            top: 95px;
+        }
+        .description{
+            font-size: 20px; 
+        }
+        .school{
+            font-size: 25px; 
+        }
+        .authorization {
+            display: flex;  
+            align-items: center;
+            font-family: Inter, sans-serif;
+            font-size: 20px;
+        }
+
+        .feedbackbox {
+            text-align: center;
+        }
+
+        .registration{
+            display: flex;
+            align-items: center;
+            font-family: Inter, sans-serif;
+            font-size: 20px;
+        }
+        .refister-form-container{
+            max-width: 415px;
+            width: 100%;
+            background: #FFFFFF;
+            box-shadow: 0px 6px 50px rgba(217, 229, 255, 0.2);
+            border-radius: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 38px;
+            padding-bottom: 38px;
+            box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.5);
+            height: 350px;
+            border-radius: 10px;
+            display: block;
+            margin-top: 15%;
+            margin-left: 39%;
+        }
+        .form-fields{
+            margin-bottom: 13px;
+
+        }        
+        input{
+            height: 70px;
+            width: 100%;
+            font-size: 20px;
+            line-height: 16px;
+            border: solid #ffffff;
+            border-radius: 5px;
+            padding-left: 25px;
+            color: #385983;
+
+        }
+        .search-button{
+            background: #247FFF;
+            border-radius: 5px;
+            height: 40px;
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+            border: #eeeeee;
+            margin-left: 85px;
+            text-align: center;
+        }
+        .search-button:hover {
+            background-color: #086CF2;
+
+        }
+        .feedback{
+            padding-top: 50px;
+        }
+        .information{
+            width: 48%;
+            font-size: large;
+        }
+        .feedback{
+            width: auto;
+            height: 12rem;
+        }
+        .btn-inf{
+            width: 100px;
+            height: 50px;
+            background: rgb(49, 108, 244);
+            box-shadow: 1px 5px 10px -5px black;
+            color: #ffffff;
+        }
+        .btn-info{
+            color: #eeeeee ;
         }
     </style>
 </body>

@@ -1,13 +1,61 @@
 {% extends 'base.html' %}
 
+
 {% block title %}Class selector{% endblock %}
 
 
 {% block content %}
     <div class="class-buttons">
     {% for a in class_list %}
-        <a href="{% url 'detail' a.slug %}" class="btn btn-primary">{{a.name}}</a>
+        <a href="{% url 'detail' a.slug %}"><button class="btn btn-primary">{{a.name}}</button></a>
     {% endfor %}
     </div>
-
+    <style>
+        .btn {
+            height:100px;
+            width:100px;
+            margin-left: 30px;
+            border-radius: 35px;         
+            background: rgb(49, 108, 244);
+            box-shadow: 5px 5px 10px -5px black;
+            color: #ffffff;
+        }
+        .btn-primary{
+            font-size: xx-large;
+        }
+        .btn:hover {
+            box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+            color: #ffffff;
+            box-shadow: 1px 5px 10px -5px black;
+            transition: all 0.2s;
+        }
+        li {
+            display: block;
+            transition-duration: 0.5s;
+        }
+        li:hover {
+            cursor: pointer;
+        }
+        .class-buttons {
+            text-align: center;
+        }
+        .content {
+            text-align: center;
+        }
+        .information{
+            display: none;
+        }
+        .contacts{
+            display: none;
+        }
+        .figure-caption{
+            display: none;
+        }
+        .logo{
+            display: none;
+        }
+        .feedback{
+            display: none;
+        }
+    </style>
 {% endblock %}
