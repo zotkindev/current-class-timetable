@@ -20,7 +20,7 @@ def detail(request, tt_slug):
         raise Http404("Class not found!")
     # class_id = get_object_or_404(Category, slug = timetable_slug)
     # class_id = Category.objects.get(slug=timetable_slug)
-    timetables_list = Timetable.objects.filter(class_init_id=class_id.id)
 
+    timetables_list = Timetable.objects.filter(class_init_id=class_id.id)[::-1]
     return render(request, 'timetables/detail.html', {'timetables_list':timetables_list,
     'class_id':class_id})
