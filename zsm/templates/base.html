@@ -15,20 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>SSS
+    <header>
         <nav class="fixed-top">
-            <a href="" class="navbar-button">Home</a>
-            <a href="{% url 'index' %}" class="navbar-button">Class selector</a>
-            <a href="{% url 'home-index' %}#contactus" class="navbar-button">Contact devs</a>
-            <a href="{% url 'home-index' %}#feedback" class="navbar-button">Feedback</a>
+            <a href="{% url 'home-index' %}" class="navbar-button">Главная</a>
+            <a href="{% url 'index' %}" class="navbar-button">Выбор класса</a>
+            <a href="{% url 'home-index' %}#contactus" class="navbar-button">Контакты</a>
+            <a href="{% url 'home-index' %}#feedback" class="navbar-button">Обратная связь</a>
     </nav>
     </header>
     <section class="content" id="content">
-        <div class="container">
         {% block content %}
 
         {% endblock %}
-        </div>
     </section>
     <section class="contact" id="contactus" name="contactus">
         <div class="container">
@@ -136,7 +134,6 @@
 
         section.contact {
         margin: 100px 0;
-        max-width: 150px;
         text-align: center;
         }
 
@@ -319,7 +316,6 @@
         .contact{
             text-align: center;
             display: block;
-            max-width: 100%;
             height: auto;
             top: 50%;
             left: 50%;
@@ -424,20 +420,7 @@
         }
         .search-button:hover {
             background-color: #086CF2;
-        .btnfly {
-        font-family:'Montserrat', sans-serif;
-        font-weight:900;
-        color:black;
-        background:#ffd429;
-        display:block;
-        width:220px;
-        padding:19px 0;
-        margin-bottom: 10px;
-        text-align:center;
-        text-decoration:none;
-        font-size:15px;
-        transition:all 0.5s ease;
-        }
+
         .feedback{
             padding-top: 50px;
         }
@@ -472,6 +455,7 @@
         }
         @media screen and (max-width: 768px){
         .contactwrapper{flex-direction:column;}
+        .contact{ max-width: 150px;}
         }
         @media screen and (max-width: 760px){
         .container{width:540px;}
@@ -481,7 +465,7 @@
 
         @media screen and (max-width: 576px){
         .container{width:90%;}
-
+        .navbar-button{font-size:10px;}
         }
     </style>
 </body>
