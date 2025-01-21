@@ -11,4 +11,8 @@ python3 manage.py migrate
 Запустить локальный сервер  
 ```  
 python3 manage.py runserver
-  ```  
+  ```
+  
+Сервер запустится на 127.0.0.1:8000  
+при запуске можно поменять IP и Port
+ 
