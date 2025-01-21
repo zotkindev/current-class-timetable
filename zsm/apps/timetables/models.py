@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length = 3, verbose_name = 'Класс')
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
@@ -9,10 +9,12 @@ class Category(models.Model):
         verbose_name = 'Класс'
         verbose_name_plural = 'Классы'
 
+
+
 class Timetable(models.Model):
     class_init = models.ForeignKey(Category, on_delete = models.CASCADE, verbose_name = 'Класс')
 
-    first_lesson = models.CharField('Первый урок', max_length = 15, default='—', null=True, blank=True)
+    first_lesson = models.CharField('Первый урок', max_length = 20, default='—', null=True, blank=True)
     first_cabinet = models.CharField('Первый кабинет', max_length = 10, default='—', null = True, blank = True)
 
     second_lesson = models.CharField('Второй урок', max_length = 15, default='—', null=True, blank=True)
@@ -37,7 +39,6 @@ class Timetable(models.Model):
 
     short_lesson = models.BooleanField('Короткие уроки')
     short_break = models.BooleanField('Короткие перемены')
-
     class Meta: 
         verbose_name = 'Расписание'
         verbose_name_plural = 'Расписания'
